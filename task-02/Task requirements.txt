@@ -1,11 +1,16 @@
-Функція checkPassword отримує пароль користувача у параметр password, перевіряє його на збіг з паролем адміністратора у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння.
+Перед звільненням розробник зламав вихідний код управління акаунтами користувачів нашого сервісу доставки їжі. Виконай рефакторинг методів об'єкта customer, розставивши відсутні this під час звернення до властивостей об'єкта.
 
-Виконай рефакторинг коду функції checkPassword, використовуючи патерн «раннє повернення»:
+Після оголошення об'єкта ми додали виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
 
-видали змінну message
-видали else
-код повинен працювати так само, як і до оптимізації
-Оголошена функція checkPassword(password)
-Виклик checkPassword("mangohackzor") повертає "Access denied, wrong password!"
-Виклик checkPassword("polyhax") повертає "Access denied, wrong password!"
-Виклик checkPassword("jqueryismyjam") повертає "Welcome!"
+Оголошена змінна customer
+Значення змінної customer - це об'єкт з властивостями і методами
+Виклик customer.getDiscount() повертає поточне значення властивості discount
+Виклик customer.setDiscount(0.15) оновлює значення властивості discount
+Виклик customer.getBalance() повертає поточне значення властивості balance.
+Виклик customer.getOrders() повертає поточне значення властивості orders
+Виклик customer.addOrder(5000, "Steak") додає "Steak" в масив значень властивості orders і оновлює баланс
+Метод getBalance об'єкта customer використовує this
+Метод getDiscount об'єкта customer використовує this
+Метод setDiscount об'єкта customer використовує this
+Метод getOrders об'єкта customer використовує this
+Метод addOrder об'єкта customer використовує this

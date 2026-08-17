@@ -1,11 +1,54 @@
-function calculateTotalPrice(order) {
-  let total = 0;
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+
+class Admin extends User {
   // Change code below this line
 
-  for (let i = 0; i < order.length; i += 1) {
-    total += order[i];
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  blacklistedEmails = [];
+
+  constructor({ email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+  }
+
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
+  }
+
+  isBlacklisted(email) {
+    return this.blacklistedEmails.includes(email);
   }
 
   // Change code above this line
-  return total;
 }
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true

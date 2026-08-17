@@ -1,4 +1,9 @@
-const fruits = ["apple", "peach", "pear", "banana"];
-
-// Change code below this line
-const fruitsArrayLength = fruits.length;
+class Car {
+  // Change code below this line
+  constructor(brand, model, price) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  // Change code above this line
+}

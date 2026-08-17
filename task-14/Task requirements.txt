@@ -1,29 +1,28 @@
-Метод slice(begin, end) повертає новий масив, що містить копію частини вихідного масиву, не змінюючи його. Копія робиться від begin і до, але не включно, end - індекси елементів вихідного масиву.
+Виконай рефакторинг класу StringBuilder, зробивши властивість value приватною.
 
-Якщо begin та end не вказані, буде створена повна копія вихідного масиву.
-Якщо не вказаний end, копіювання буде від start до кінця вихідного масиву.
-Якщо значення start від'ємне, а end не вказане, то будуть скопійовані останні N елементів.
-const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
+Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
 
-console.log(planets.slice(0, 2)); // ['Earth', 'Mars']
-console.log(planets.slice(0, 4)); // ['Earth', 'Mars', 'Venus', 'Jupiter']
-console.log(planets.slice(1, 3)); // ['Mars', 'Venus']
-console.log(planets.slice(-2)); // ['Jupiter', 'Saturn']
-console.log(planets.slice()); // ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn']
+Оголошений клас StringBuilder
 
+Властивість value в класі StringBuilder оголошена приватною
 
+В класі StringBuilder оголошений метод getValue
 
-Доповни код таким чином, щоб змінні містили часткові копії вихідного масиву fruits.
+В класі StringBuilder оголошений метод padEnd
 
-firstTwoEls - масив із перших двох елементів
-nonExtremeEls - масив з усіх елементів, крім першого та останнього
-lastThreeEls - масив із трьох останніх елементів
-Оголошена змінна fruits
-Значення змінної fruits - це масив ["apple", "plum", "pear", "orange", "banana"]
-Оголошена змінна firstTwoEls
-Значення змінної firstTwoEls - це масив ["apple", "plum"]
-Оголошена змінна nonExtremeEls
-Значення змінної nonExtremeEls - це масив ["plum", "pear", "orange"]
-Оголошена змінна lastThreeEls
-Значення змінної lastThreeEls - це масив ["pear", "orange", "banana"]
-Змінній lastThreeEls присвоєна копія частини масиву fruits після застосування методу slice з правильними аргументами
+В класі StringBuilder оголошений метод padStart
+
+В класі StringBuilder оголошений метод padBoth
+
+В результаті виклику new StringBuilder('.') значення змінної builder - це об'єкт
+
+Об'єкт builder не містить властивості value
+
+Перший виклик builder.getValue(), відразу після ініціалізації екземпляра, повертає рядок .
+
+Другий виклик builder.getValue(), після виклику builder.padStart("^"), повертає рядок ^.
+
+Третій виклик builder.getValue(), після виклику builder.padEnd("^"), повертає рядок ^.^
+
+Четвертий виклик builder.getValue(), після виклику builder.padBoth("="), повертає рядок =^.^=
+

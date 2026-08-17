@@ -1,5 +1,9 @@
-const fruits = ["apple", "peach", "pear", "banana"];
-
-// Change code below this line
-const lastElementIndex = fruits.length - 1;
-const lastElement = fruits[lastElementIndex];
+class Car {
+  // Change code below this line
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  // Change code above this line
+}

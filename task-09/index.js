@@ -1,7 +1,16 @@
-function getExtremeElements(array) {
+class Car {
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
   // Change code below this line
+  getPrice() {
+    return this.price;
+  }
 
-  return [array[0], array[array.length - 1]];
-
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
   // Change code above this line
 }

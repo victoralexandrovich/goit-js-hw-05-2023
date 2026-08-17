@@ -1,22 +1,23 @@
-Для доступу до значення елемента масиву застосовують синтаксис квадратних дужок масив[індекс]. Між ім'ям змінної масиву і квадратними дужками не повинно бути пробілу.
+Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent, а той, своєю чергою, був прототипом для child.
 
-Увага
-Індексація елементів масиву починається з нуля.
-
-const planets = ["Earth", "Mars", "Venus"];
-planets[0]; // "Earth"
-planets[2]; // "Venus"
-
-
-Оголоси три змінні і присвой кожній з них значення, використовуючи нотацію квадратних дужок.
-
-Ім'я змінної	Значення змінної
-firstElement	перший елемент масиву
-secondElement	другий елемент масиву
-lastElement	останній елемент масиву
-Оголошена змінна firstElement
-Значення змінної firstElement - це рядок "apple"
-Оголошена змінна secondElement
-Значення змінної secondElement - це рядок "plum"
-Оголошена змінна lastElement
-Значення змінної lastElement - це рядок "orange"
+Оголошена змінна ancestor
+Значення змінної ancestor - це об'єкт.
+Оголошена змінна parent
+Значення змінної parent - це об'єкт.
+Оголошена змінна child
+Значення змінної child - це об'єкт.
+Виклик ancestor.isPrototypeOf("parent") повертає true
+Виклик parent.isPrototypeOf("child") повертає true
+Виклик ancestor.hasOwnProperty("surname") повертає true
+Звернення до ancestor.surname повертає "Dawson"
+Виклик parent.hasOwnProperty("surname") повертає true
+Звернення до parent.surname повертає "Moore"
+Виклик child.hasOwnProperty("surname") повертає false
+Звернення до child.surname повертає "Moore"
+Виклик ancestor.hasOwnProperty("heritage") повертає true
+Звернення до ancestor.heritage повертає "Irish"
+Виклик parent.hasOwnProperty("heritage") повертає false
+Звернення до parent.heritage повертає "Irish"
+Виклик child.hasOwnProperty("heritage") повертає false
+Звернення до child.heritage повертає "Irish"
+Використовується метод Object.create()

@@ -1,6 +1,18 @@
-const fruits = ["apple", "plum", "pear", "orange"];
+const ancestor = {
+  name: "Paul",
+  age: 83,
+  surname: "Dawson",
+  heritage: "Irish",
+};
 // Change code below this line
 
-const firstElement = fruits[0];
-const secondElement = fruits[1];
-const lastElement = fruits[fruits.length - 1];
+const parent = Object.create(ancestor);
+parent.name = "Stacey";
+parent.surname = "Moore";
+parent.age = 54;
+
+const child = Object.create(parent);
+child.name = "Jason";
+child.age = 27;
+
+// Change code above this line

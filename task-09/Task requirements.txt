@@ -1,6 +1,27 @@
-Напиши функцію getExtremeElements(array), яка приймає один параметр array - масив елементів довільної довжини. Функція повинна повертати масив з двох елементів - першого і останнього елемента параметра array.
+Для роботи з властивостями майбутнього екземпляра використовуються методи класу. Методи - це просто функції, але з однією відмінністю - вони доступні екземпляру класу.
 
-Оголошена функція getExtremeElements(array)
-Виклик getExtremeElements([1, 2, 3, 4, 5]) повертає [1, 5]
-Виклик getExtremeElements(["Earth", "Mars", "Venus"]) повертає ["Earth", "Venus"]
-Виклик getExtremeElements(["apple", "peach", "pear", "banana"]) повертає ["apple", "banana"]
+class User {
+  constructor({ name, email }) {
+    this.name = name;
+    this.email = email;
+  }
+
+  // Метод getEmail
+  getEmail() {
+    return this.email;
+  }
+
+  // Метод changeEmail
+  changeEmail(newEmail) {
+    this.email = newEmail;
+  }
+}
+
+Додай класу Car два методи.
+
+getPrice() - повертає значення властивості price з об'єкта, який буде його викликати.
+changePrice(newPrice) - оновлює значення властивості price в об'єкта, який буде його викликати на newPrice.
+В класі Car оголошений метод getPrice
+Метод getPrice повертає значення властивості price екземпляра класу, який його викликає
+В класі Car оголошений метод changePrice
+Метод changePrice змінює значення властивості price екземпляра класу, який його викликає

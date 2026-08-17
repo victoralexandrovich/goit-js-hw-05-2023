@@ -1,9 +1,19 @@
-function makeStringFromArray(array, delimiter) {
-  let string;
+class Car {
   // Change code below this line
+  #brand;
 
-  string = array.join(delimiter);
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
+  }
 
+  getBrand() {
+    return this.#brand;
+  }
+
+  changeBrand(newBrand) {
+    this.#brand = newBrand;
+  }
   // Change code above this line
-  return string;
 }

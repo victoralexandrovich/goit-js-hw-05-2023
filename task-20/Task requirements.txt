@@ -1,7 +1,38 @@
-Напиши функцію calculateTotalPrice(order), яка приймає один параметр order - масив чисел, і обчислює загальну суму його елементів. Загальна сума елементів повинна зберігатися у змінній total, яка повертається як результат роботи функції.
+В дочірньому класі можна оголошувати методи, які будуть доступні тільки його екземплярам.
 
-Оголошена функція calculateTotalPrice(order)
-Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
-Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
-Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
-Виклик функції calculateTotalPrice() з випадковим масивом повертає правильне значення
+// Уявімо, що вище є оголошення класу User
+
+class ContentEditor extends User {
+  constructor({ email, posts }) {
+    super(email);
+    this.posts = posts;
+  }
+
+  addPost(post) {
+    this.posts.push(post);
+  }
+}
+
+const editor = new ContentEditor({ email: "mango@mail.com", posts: [] });
+console.log(editor); // { email: 'mango@mail.com', posts: [] }
+console.log(editor.email); // 'mango@mail.com'
+editor.addPost("post-1");
+console.log(editor.posts); // ['post-1']
+
+
+Додай класу Admin наступні властивості і методи.
+
+Публічну властивість blacklistedEmails для зберігання чорного списку поштових адрес користувачів. Значення за замовчуванням — це порожній масив.
+Публічний метод blacklist(email) для додавання пошти у чорний список. Метод повинен додавати значення параметра email в масив, що зберігається у властивості blacklistedEmails.
+Публічний метод isBlacklisted(email) для перевірки пошти у чорному списку. Метод повинен перевіряти наявність значення параметра email в масиві, що зберігається у властивості blacklistedEmails, і повертати true або false.
+Після оголошення класу ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
+
+Оголошений клас Admin
+Клас Admin наслідує від класу User
+Клас Admin містить публічну властивість blacklistedEmails
+Клас Admin містить публічний метод blacklist
+Клас Admin містить публічний метод isBlacklisted
+Після виклику mango.blacklist("poly@mail.com") значення властивості blacklistedEmails - це масив ["poly@mail.com"]
+Виклик mango.isBlacklisted("mango@mail.com") повертає false
+Виклик mango.isBlacklisted("poly@mail.com") повертає true
+

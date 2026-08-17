@@ -1,17 +1,15 @@
-Термін slug - це людино-зрозумілий унікальний ідентифікатор, який використовується у веб-розробці для створення читабельних URL-адрес.
+Виконай рефакторинг класу Storage, зробивши властивість items приватною.
 
-Наприклад, замість того, щоб користувач побачив в адресному рядку mysite.com/posts/1q8fh74tx, можна зробити slug з назви статті. В результаті адреса буде приємнішою для сприйняття: mysite.com/posts/arrays-for-begginers.
+Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
 
-Увага
-Slug - це завжди рядок у нижньому регістрі, слова якого розділені тире.
-
-Напиши функцію slugify(title), яка приймає заголовок статті, параметр title, і повертає slug, створений з цього рядка.
-
-Значенням параметра title будуть рядки, слова яких розділені лише пробілами
-Усі символи slug повинні бути у нижньому регістрі
-Всі слова slug повинні бути розділені тире
-Оголошена функція slugify(title)
-Виклик slugify("Arrays for begginers") повертає "arrays-for-begginers"
-Виклик slugify("English for developer") повертає "english-for-developer"
-Виклик slugify("Ten secrets of JavaScript") повертає "ten-secrets-of-javascript"
-Виклик slugify("How to become a JUNIOR developer in TWO WEEKS") повертає "how-to-become-a-junior-developer-in-two-weeks"
+Оголошений клас Storage
+Об'єкт storage не містить властивості items
+В класі Storage оголошений метод getItems
+В класі Storage оголошений метод addItem
+В класі Storage оголошений метод removeItem
+Властивість items в класі Storage оголошена приватною
+Конструктор класу приймає властивість items
+В результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage - це об'єкт
+Перший виклик storage.getItems(), відразу після ініціалізації екземпляра, повертає масив ["Nanitoids", "Prolonger", "Antigravitator"]
+Другий виклик, storage.getItems(), після виклику storage.addItem("Droid"), повертає масив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+Третій виклик storage.getItems(), після виклику storage.removeItem("Prolonger"), повертає масив ["Nanitoids", "Antigravitator", "Droid"]

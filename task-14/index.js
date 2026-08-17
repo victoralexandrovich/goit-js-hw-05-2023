@@ -1,6 +1,35 @@
-const fruits = ["apple", "plum", "pear", "orange", "banana"];
+class StringBuilder {
+  // Change code below this line
+  #value;
 
-// Change code below this line
-const firstTwoEls = fruits.slice(0, 2);
-const nonExtremeEls = fruits.slice(1, 4);
-const lastThreeEls = fruits.slice(-3);
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+
+  getValue() {
+    return this.#value;
+  }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="

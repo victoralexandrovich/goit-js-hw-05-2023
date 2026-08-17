@@ -1,13 +1,22 @@
-function calculateTotal(number) {
-  // Change code below this line
-
-  let total = 0;
-
-  for (let i = 1; i <= number; i += 1) {
-    total += i;
+class User {
+  constructor(email) {
+    this.email = email;
   }
 
-  return total;
+  get email() {
+    return this.email;
+  }
 
-  // Change code above this line
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+
+// Change code below this line
+
+class Admin extends User {
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
 }

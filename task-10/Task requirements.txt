@@ -1,15 +1,21 @@
-Метод split(delimiter) дозволяє перетворити рядок на масив, "розбивши" його по роздільнику delimiter. Якщо роздільник - це порожній рядок, отримаємо масив окремих символів. Роздільником може бути один або кілька символів.
+Створи клас Storage, який створюватиме об'єкти для управління складом товарів. Клас очікує лише один аргумент - початковий масив товарів, який записується до створеного об'єкта в властивість items.
 
-const name = "Mango";
-console.log(name.split("")); // ["M", "a", "n", "g", "o"]
+Оголоси наступні методи класу:
 
-const message = "JavaScript essentials";
-console.log(message.split(" ")); // ["JavaScript", "essentials"]
+getItems() - повертає масив поточних товарів у властивості items.
+addItem(newItem) - приймає новий товар newItem і додає його до масиву товарів у властивості items об'єкта.
+removeItem(itemToRemove) - приймає товар itemToRemove і видаляє його з масиву товарів у властивості items об'єкта.
+Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
 
-
-Доповни код функції splitMessage(message, delimiter). Вона повинна розбити рядок message за вказаним роздільником delimiter і зберегти отриманий масив рядків у змінній words.
-
-Оголошена функція splitMessage(message, delimiter)
-Виклик splitMessage("Mango hurries to the train", " ") повертає ["Mango", "hurries", "to", "the", "train"]
-Виклик splitMessage("Mango", "") повертає ["M", "a", "n", "g", "o"]
-Виклик splitMessage("best_for_week", "_") повертає ["best", "for", "week"]
+Оголошений клас Storage
+В класі Storage оголошений метод getItems
+В класі Storage оголошений метод addItem
+В класі Storage оголошений метод removeItem
+Метод getItems повертає значення властивості items екземпляра класу, який його викликає
+Метод addItem змінює властивість items екземпляра класу, який його викликає
+Метод removeItem змінює властивість items екземпляра класу, який його викликає
+В результаті виклику new Storage(["Nanitoids", "Prolonger", "Antigravitator"]) значення змінної storage - це об'єкт
+Об'єкт storage містить властивість items
+Перший виклик storage.getItems(), відразу після інціалізаціі екземпляра, повертає масив ["Nanitoids", "Prolonger", "Antigravitator"]
+Другий виклик, storage.getItems(), після виклику storage.addItem("Droid"), повертає масив ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+Третій виклик storage.getItems(), після виклику storage.removeItem("Prolonger"), повертає масив ["Nanitoids", "Antigravitator", "Droid"]
